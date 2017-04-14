@@ -78,20 +78,33 @@ def main():
 	#message
 	msg = "Dont go away"
 	#random key
+	print 'message is:',msg
+	print '\nGenerating key ....'
 	key = key_generator()
-	#print "key is",key
+	print "key is:",key
 	#print "msg is",msg
 	#committing message
+	print "\ncommiting message ...."
 	com = commit(msg,key)
+	print "Commited"
+	print 'com:',com
 	#verifying message
+	print "\nVerifying Commit ...."
 	verify(com,key,msg)
-
+	print '\n----------------------------------------------------------'
 	#RSA-encryption
 	#key_pair
+	print "\nRSA_Encryption"
+	print "\nGenerating key pair ...."
 	sk,pk = rsa_generatekey()
+	print 'private key is',sk,' Public key is',pk
 	#encryption
+	print "\nEncrypting ...."
 	cipher = rsa_encrypt(com,sk)
+	print "Encrypted"
+	print 'cipher:',cipher
 	#Decryption & Verification
+	print "\nSignature Verifying ...."
 	rsa_verify(cipher,com,pk)
 
 

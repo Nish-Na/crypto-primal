@@ -83,7 +83,7 @@ void polypow(poly *P,ll r,ll n)
 	for(ll i=powres->degree+1;i<=(2*r);i++)
 		P->coeff[i] = 0;
 
-	
+	polyprint(P);
 }
 
 
